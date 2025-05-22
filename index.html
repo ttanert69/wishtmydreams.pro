@@ -1,122 +1,105 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Hoşgeldin - Benim Kişisel Sitem</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wisht My Dreams</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: #f4f4f9;
-      color: #333;
-      margin: 0; padding: 0 1rem 3rem 1rem;
-      line-height: 1.6;
-    }
-    header {
-      background-color: #4a90e2;
-      color: white;
-      padding: 2rem 0;
       text-align: center;
-      font-size: 2.5rem;
-      font-weight: bold;
-    }
-    main {
-      max-width: 800px;
-      margin: 2rem auto 4rem auto;
-      background: white;
-      padding: 2rem 3rem;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      padding: 20px;
+      background: #f4f4f4;
     }
     section {
-      margin-bottom: 3rem;
+      margin-bottom: 40px;
     }
-    h2 {
-      border-bottom: 3px solid #4a90e2;
-      padding-bottom: 0.7rem;
-      margin-bottom: 1rem;
-      font-size: 1.8rem;
-      color: #2f5bb7;
+    #wheel {
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      border: 10px solid #444;
+      position: relative;
+      margin: 50px auto;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+      transition: transform 5s cubic-bezier(0.33, 1, 0.68, 1);
     }
-    p {
-      font-size: 1.1rem;
-      margin-bottom: 1.3rem;
-    }
-    img {
-      max-width: 100%;
-      border-radius: 8px;
-      margin-top: 1rem;
-      box-shadow: 0 3px 7px rgba(0,0,0,0.2);
-    }
-    footer {
-      text-align: center;
-      padding: 1.5rem 1rem;
-      font-size: 0.9rem;
-      color: #777;
-      border-top: 1px solid #ddd;
-      margin-top: 2rem;
-    }
-    a.button {
-      display: inline-block;
-      padding: 0.6rem 1.3rem;
-      background-color: #4a90e2;
-      color: white;
-      text-decoration: none;
-      border-radius: 6px;
-      transition: background-color 0.3s;
+    .slice {
+      width: 50%;
+      height: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform-origin: 0% 0%;
+      background: #ffcc00;
+      border: 1px solid #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       font-weight: bold;
+      font-size: 18px;
     }
-    a.button:hover {
-      background-color: #357ABD;
+    #spinBtn {
+      padding: 10px 20px;
+      font-size: 18px;
+      background: #28a745;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+    #pointer {
+      width: 0;
+      height: 0;
+      border-left: 20px solid transparent;
+      border-right: 20px solid transparent;
+      border-bottom: 30px solid red;
+      margin: 0 auto;
+      position: relative;
+      top: -35px;
     }
   </style>
 </head>
 <body>
-  <header>Hoşgeldin!</header>
-  <main>
-    <section>
-      <h2>Hakkımda</h2>
-      <p>Merhaba! Ben bu siteyi kendimi tanıtmak, öğrenmek ve deneyimlerimi paylaşmak için yaptım.  
-      Web dünyasında yeni olmama rağmen, her gün yeni şeyler öğreniyorum ve bu yolculuğumu burada kayıt altına alıyorum.</p>
-      <p>Teknolojiye, yazılıma ve tasarıma meraklıyım. Bu sitede hem hobilerimi hem de projelerimi paylaşacağım.  
-      Sen de kendi sayfanı kolayca yapabilir, değişiklikler yaparak kendini geliştirebilirsin!</p>
-      <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80" alt="Bilgisayar ve kodlama" />
-    </section>
+  <h1>Wisht My Dreams</h1>
 
-    <section>
-      <h2>Projelerim</h2>
-      <p>Şu anda üzerinde çalıştığım birkaç küçük proje var. Bunlar arasında kişisel web siteleri, basit oyunlar ve otomasyonlar bulunuyor.  
-      İlerleyen günlerde daha fazla proje eklemeyi planlıyorum.</p>
-      <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80" alt="Kodlama projeleri" />
-    </section>
+  <section>
+    <h2>Hikayemiz</h2>
+    <p>Burası senin mevcut yazıların için bir alan olacak. Eski içerikler burada duracak ve gerektiğinde düzenleriz.</p>
+  </section>
 
-    <section>
-      <h2>İletişim</h2>
-      <p>Bana ulaşmak için aşağıdaki butona tıklayabilirsin. Her türlü öneri ve soruna açığım!</p>
-      <a href="mailto:emailin@ornek.com" class="button">Mail Gönder</a>
-    </section>
-  </main>
-  <footer>&copy; 2025 ttanert69 | Kendi kişisel sitem.</footer>
+  <section id="spin-section">
+    <h2>Şans Çarkı</h2>
+    <div id="pointer"></div>
+    <div id="wheel"></div>
+    <button id="spinBtn">Çevir!</button>
+  </section>
+
+  <section>
+    <h2>İletişim</h2>
+    <p>Bize ulaşmak için email@example.com adresine mail atabilirsin.</p>
+  </section>
+
+  <script>
+    const wheel = document.getElementById('wheel');
+    const prizes = ['100₺', '250₺', '500₺', '150₺', '300₺', '50₺', '200₺', '400₺'];
+
+    // Çarkı oluştur
+    prizes.forEach((text, i) => {
+      const slice = document.createElement('div');
+      slice.className = 'slice';
+      const angle = (360 / prizes.length) * i;
+      slice.style.transform = `rotate(${angle}deg) skewY(-45deg)`;
+      slice.innerHTML = `<div style="transform: skewY(45deg) rotate(${360 / prizes.length / 2}deg); width: 100%; text-align: center;">${text}</div>`;
+      wheel.appendChild(slice);
+    });
+
+    document.getElementById('spinBtn').addEventListener('click', () => {
+      const deg = Math.floor(3600 + Math.random() * 360);
+      wheel.style.transform = `rotate(${deg}deg)`;
+    });
+  </script>
 </body>
 </html>
-<!-- Dostlara Şakacı Tanıtım Bölümü -->
-<section style="padding: 20px; background-color: #f0f0f5; margin-top: 50px; border-radius: 8px; font-family: Arial, sans-serif;">
-  <h2 style="color: #333;">Merhaba Dilek ve Sevgili Dostlarım!</h2>
-  <p style="font-size: 1.1em; color: #555;">
-    İşte karşınızda benim şahane <strong>test web sitem</strong>! 🎉<br>
-    Burayı öğreniyorum, deniyorum, geliştiriyorum. Hatalar, saçmalıklar olabilir ama kabul edin, emek var! 😄  
-    Bu site benim küçük dijital serüvenim ve sizin desteğinize çok ihtiyacım var.
-  </p>
-  <p style="font-size: 1.1em; color: #555;">
-    Her türlü öneri, eleştiri, hatta sadece “çok güzel olmuş” demeniz bile bana enerji verir!<br>
-    Eğer isterseniz, arada bir ufak destek de yapabilirsiniz, hani tam da böyle dijital dostlukların sembolü gibi! 😜
-  </p>
-  <p style="font-size: 1.1em; color: #555;">
-    Şimdilik bu kadar, bakalım ilerleyen günlerde neler yapacağız.<br>
-    Sizler olmasanız bu macera çok sıkıcı olurdu!  
-  </p>
-  <hr style="margin: 20px 0; border-color: #ccc;">
-  <footer style="font-size: 0.9em; color: #777;">
-    <p><strong>Dilek Göçkün</strong> — IBAN: <code>TR55 1551 1515 1515 1515</code></p>
-  </footer>
-</section>
