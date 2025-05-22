@@ -1,47 +1,65 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Wisht My Dreams</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Arial', sans-serif;
+      background: #f8f9fa;
+      margin: 0;
+      padding: 0;
       text-align: center;
-      padding: 20px;
-      background: #f4f4f4;
     }
+
+    header {
+      background: #343a40;
+      color: white;
+      padding: 20px 0;
+    }
+
     section {
-      margin-bottom: 40px;
+      padding: 40px 20px;
     }
+
+    h1, h2 {
+      margin-bottom: 20px;
+    }
+
     #wheel {
-      width: 300px;
-      height: 300px;
+      width: 350px;
+      height: 350px;
       border-radius: 50%;
-      border: 10px solid #444;
+      margin: 40px auto 20px;
+      transition: transform 4s cubic-bezier(.33,1,.68,1);
+      background:
+        conic-gradient(
+          #ffdd55 0deg   45deg,
+          #ffee88 45deg  90deg,
+          #ffdd55 90deg  135deg,
+          #ffee88 135deg 180deg,
+          #ffdd55 180deg 225deg,
+          #ffee88 225deg 270deg,
+          #ffdd55 270deg 315deg,
+          #ffee88 315deg 360deg
+        );
       position: relative;
-      margin: 50px auto;
-      overflow: hidden;
-      box-shadow: 0 0 10px rgba(0,0,0,0.5);
-      transition: transform 5s cubic-bezier(0.33, 1, 0.68, 1);
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
     }
-    .slice {
-      width: 50%;
-      height: 50%;
+
+    #wheel div {
       position: absolute;
-      top: 50%;
       left: 50%;
-      transform-origin: 0% 0%;
-      background: #ffcc00;
-      border: 1px solid #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      top: 50%;
+      transform-origin: center center;
       font-weight: bold;
       font-size: 18px;
+      pointer-events: none;
     }
+
     #spinBtn {
-      padding: 10px 20px;
+      padding: 12px 25px;
       font-size: 18px;
       background: #28a745;
       color: white;
@@ -50,102 +68,63 @@
       cursor: pointer;
       margin-top: 20px;
     }
+
     #pointer {
       width: 0;
       height: 0;
       border-left: 20px solid transparent;
       border-right: 20px solid transparent;
       border-bottom: 30px solid red;
-      margin: 0 auto;
-      position: relative;
-      top: -35px;
+      margin: 0 auto -15px;
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 16px;
+      color: #555;
+      padding-bottom: 40px;
     }
   </style>
 </head>
 <body>
-  <h1>Wisht My Dreams</h1>
+  <header>
+    <h1>Wisht My Dreams</h1>
+    <p>Hayallerine bir adım daha yaklaş</p>
+  </header>
 
   <section>
-    <h2>Hikayemiz</h2>
-    <p>Burası senin mevcut yazıların için bir alan. Eski içerikler burada duracak, istersek sonra düzenleriz.</p>
+    <h2>Hoş Geldin!</h2>
+    <p>Bu platform, hayallerini gerçekleştirmek isteyenler için hazırlandı. Şansını dene ve sürpriz ödülleri yakala!</p>
   </section>
 
-  <section id="spin-section">
+  <section>
     <h2>Şans Çarkı</h2>
     <div id="pointer"></div>
     <div id="wheel"></div>
     <button id="spinBtn">Çevir!</button>
   </section>
 
-  <section>
-    <h2>İletişim</h2>
-    <p>Bize ulaşmak için email@example.com ad
-<!-- —— ŞANS ÇARKI BAŞLANGIÇ —— -->
-<section id="spin-section" style="margin:60px 0;">
-  <h2>Şans Çarkı</h2>
+  <footer>
+    🎁 Kazandığınız ödülü almak için seçilen tutarı aşağıdaki IBAN’a gönderebilirsiniz.<br><br>
+    <strong>IBAN:</strong> TR00 0000 0000 0000 0000 0000 00
+  </footer>
 
-  <!-- Sabit gösterge -->
-  <div style="
-        width:0;height:0;
-        border-left:20px solid transparent;
-        border-right:20px solid transparent;
-        border-bottom:30px solid red;
-        margin:0 auto -12px;
-      ">
-  </div>
+  <script>
+    const wheel = document.getElementById('wheel');
+    const labels = ['100₺','250₺','500₺','150₺','300₺','50₺','200₺','400₺'];
+    labels.forEach((txt, i) => {
+      const el = document.createElement('div');
+      el.textContent = txt;
+      el.style.transform = `rotate(${i * 45 + 22.5}deg) translateY(-150px) rotate(-${i * 45 + 22.5}deg)`;
+      wheel.appendChild(el);
+    });
 
-  <!-- Çark -->
-  <div id="wheel" style="
-        width:320px;height:320px;border-radius:50%;
-        margin:0 auto;transition:transform 4s cubic-bezier(.33,1,.68,1);
-        background:
-          conic-gradient(
-            #ffdd55 0deg   45deg,
-            #ffee88 45deg  90deg,
-            #ffdd55 90deg  135deg,
-            #ffee88 135deg 180deg,
-            #ffdd55 180deg 225deg,
-            #ffee88 225deg 270deg,
-            #ffdd55 270deg 315deg,
-            #ffee88 315deg 360deg
-          );
-        position:relative;
-      ">
-      <!-- Etiketler -->
-      <script>
-        const labels=['100₺','250₺','500₺','150₺','300₺','50₺','200₺','400₺'];
-        const wheel=document.currentScript.parentElement;
-        labels.forEach((txt,i)=>{
-          const el=document.createElement('div');
-          el.textContent=txt;
-          el.style.cssText=`
-            position:absolute;
-            left:50%;top:50%;
-            transform:rotate(${45*i+22.5}deg) translateY(-130px) rotate(-${45*i+22.5}deg);
-            font:bold 18px/1 Arial, sans-serif;
-            pointer-events:none;
-          `;
-          wheel.appendChild(el);
-        });
-      </script>
-  </div>
-
-  <button id="spinBtn" style="
-        margin-top:25px;padding:10px 28px;font-size:18px;
-        background:#28a745;color:#fff;border:none;border-radius:8px;cursor:pointer;">
-    Çevir!
-  </button>
-</section>
-
-<script>
-  const spinBtn=document.getElementById('spinBtn');
-  const wheelEl=document.getElementById('wheel');
-  let totalRotation=0;
-  spinBtn.addEventListener('click',()=>{
-    const extra=360*3+Math.floor(Math.random()*360); // 3 tur + rastgele
-    totalRotation+=extra;
-    wheelEl.style.transform=`rotate(${totalRotation}deg)`;
-  });
-</script>
-<!-- —— ŞANS ÇARKI BİTİŞ —— -->
- 
+    let totalRotation = 0;
+    document.getElementById('spinBtn').addEventListener('click', () => {
+      const extra = 360 * 3 + Math.floor(Math.random() * 360);
+      totalRotation += extra;
+      wheel.style.transform = `rotate(${totalRotation}deg)`;
+    });
+  </script>
+</body>
+</html>
