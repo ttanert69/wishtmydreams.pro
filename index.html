@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -67,7 +67,7 @@
 
   <section>
     <h2>Hikayemiz</h2>
-    <p>Burası senin mevcut yazıların için bir alan olacak. Eski içerikler burada duracak ve gerektiğinde düzenleriz.</p>
+    <p>Burası senin mevcut yazıların için bir alan. Eski içerikler burada duracak, istersek sonra düzenleriz.</p>
   </section>
 
   <section id="spin-section">
@@ -79,27 +79,4 @@
 
   <section>
     <h2>İletişim</h2>
-    <p>Bize ulaşmak için email@example.com adresine mail atabilirsin.</p>
-  </section>
-
-  <script>
-    const wheel = document.getElementById('wheel');
-    const prizes = ['100₺', '250₺', '500₺', '150₺', '300₺', '50₺', '200₺', '400₺'];
-
-    // Çarkı oluştur
-    prizes.forEach((text, i) => {
-      const slice = document.createElement('div');
-      slice.className = 'slice';
-      const angle = (360 / prizes.length) * i;
-      slice.style.transform = `rotate(${angle}deg) skewY(-45deg)`;
-      slice.innerHTML = `<div style="transform: skewY(45deg) rotate(${360 / prizes.length / 2}deg); width: 100%; text-align: center;">${text}</div>`;
-      wheel.appendChild(slice);
-    });
-
-    document.getElementById('spinBtn').addEventListener('click', () => {
-      const deg = Math.floor(3600 + Math.random() * 360);
-      wheel.style.transform = `rotate(${deg}deg)`;
-    });
-  </script>
-</body>
-</html>
+    <p>Bize ulaşmak için email@example.com ad
