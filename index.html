@@ -1,145 +1,167 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>WishtMyDreams</title>
   <style>
     body {
       margin: 0;
+      padding: 0;
       font-family: 'Segoe UI', sans-serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      background: linear-gradient(135deg, #8ec5fc, #e0c3fc);
-      color: #333;
+      background: radial-gradient(ellipse at center, #1b2735 0%, #090a0f 100%);
+      color: #fff;
+      overflow-x: hidden;
+      text-align: center;
     }
 
     h1 {
-      margin-bottom: 10px;
+      margin-top: 40px;
+      font-size: 28px;
+      color: #f1c40f;
+      text-shadow: 0 0 10px #f39c12;
+    }
+
+    p {
+      color: #ccc;
+      font-size: 16px;
+      margin-bottom: 30px;
     }
 
     .wheel-container {
       position: relative;
       width: 300px;
       height: 300px;
-      margin: 30px 0;
+      margin: 0 auto;
     }
 
     .wheel {
       width: 100%;
       height: 100%;
       border-radius: 50%;
-      border: 10px solid #fff;
-      box-shadow: 0 0 20px rgba(0,0,0,0.2);
-      position: absolute;
-      top: 0;
-      left: 0;
-      transition: transform 4s cubic-bezier(0.33, 1, 0.68, 1);
+      border: 6px solid #fff;
       background: conic-gradient(
-        #ff7675 0deg 45deg,
-        #74b9ff 45deg 90deg,
-        #ffeaa7 90deg 135deg,
-        #55efc4 135deg 180deg,
-        #fd79a8 180deg 225deg,
-        #a29bfe 225deg 270deg,
-        #fab1a0 270deg 315deg,
-        #00cec9 315deg 360deg
+        #f39c12 0deg 45deg,
+        #e74c3c 45deg 90deg,
+        #9b59b6 90deg 135deg,
+        #3498db 135deg 180deg,
+        #2ecc71 180deg 225deg,
+        #e67e22 225deg 270deg,
+        #1abc9c 270deg 315deg,
+        #d35400 315deg 360deg
       );
-    }
-
-    .button {
-      margin-top: 20px;
-      padding: 10px 20px;
-      font-size: 20px;
-      background: #6c5ce7;
-      color: white;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-
-    .button:hover {
-      background: #341f97;
+      transition: transform 4s ease-out;
     }
 
     .arrow {
-      width: 0;
-      height: 0;
-      border-left: 20px solid transparent;
-      border-right: 20px solid transparent;
-      border-bottom: 30px solid red;
       position: absolute;
-      top: -40px;
+      top: -30px;
       left: 50%;
       transform: translateX(-50%);
+      width: 0;
+      height: 0;
+      border-left: 15px solid transparent;
+      border-right: 15px solid transparent;
+      border-bottom: 30px solid #fff;
     }
 
-    .result {
-      margin-top: 30px;
+    .spin-btn {
+      margin-top: 20px;
+      padding: 12px 24px;
       font-size: 18px;
-      text-align: center;
-      max-width: 80%;
-      background: rgba(255,255,255,0.8);
-      padding: 15px;
+      background-color: #8e44ad;
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 0 10px #8e44ad;
+    }
+
+    .spin-btn:hover {
+      background-color: #732d91;
+    }
+
+    .result-box {
+      margin: 40px auto;
+      max-width: 300px;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 20px;
       border-radius: 12px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      border: 2px solid #f1c40f;
+      box-shadow: 0 0 20px #f1c40f;
+      display: none;
+    }
+
+    .stars {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      background: transparent;
+      pointer-events: none;
+    }
+
+    .stars::after {
+      content: "";
+      position: absolute;
+      width: 200%;
+      height: 200%;
+      background: transparent url('https://www.transparenttextures.com/patterns/stardust.png') repeat;
+      animation: moveStars 100s linear infinite;
+      opacity: 0.2;
+    }
+
+    @keyframes moveStars {
+      0% { transform: translate(0, 0); }
+      100% { transform: translate(-500px, -500px); }
     }
   </style>
 </head>
 <body>
+  <div class="stars"></div>
 
-  <h1>Hayallerini Seç!</h1>
-  <p>Dileğini seçmek için çarkı çevir!</p>
+  <h1>WishtMyDreams'e Hoş Geldin</h1>
+  <p>Burası benim yeni test sitem. Denemelerimi burada yapıyorum. Şansını denemek ister misin?</p>
 
   <div class="wheel-container">
     <div class="arrow"></div>
     <div class="wheel" id="wheel"></div>
   </div>
 
-  <button class="button" onclick="spin()">ÇEVİR</button>
+  <button class="spin-btn" onclick="spin()">ÇEVİR</button>
 
-  <div class="result" id="resultText"></div>
+  <div class="result-box" id="resultBox">
+    <h2>Sonuç: <span id="result"></span></h2>
+    <p>İşte bu benim yeni sayfam.<br>
+      Hayallerle başladım, kodlarla süsledim.<br>
+      Her şey adım adım başlıyor, tıpkı bu çark gibi...</p>
+  </div>
 
   <script>
-    const options = [
-      "Başarı",
-      "Zenginlik",
-      "Sağlık",
-      "Aşk",
-      "Macera",
-      "Bilgelik",
-      "Mutluluk",
-      "Yeni Bir Başlangıç"
-    ];
-
+    const wheel = document.getElementById('wheel');
+    const resultBox = document.getElementById('resultBox');
+    const resultText = document.getElementById('result');
+    const segments = [100, 200, 300, 400, 500, 600, 700, 800];
     let spinning = false;
 
     function spin() {
       if (spinning) return;
       spinning = true;
 
-      const wheel = document.getElementById("wheel");
-      const resultText = document.getElementById("resultText");
+      const index = Math.floor(Math.random() * segments.length);
+      const segmentAngle = 360 / segments.length;
+      const rotateTo = 360 * 5 + (index * segmentAngle) + segmentAngle / 2;
 
-      const randomIndex = Math.floor(Math.random() * options.length);
-      const anglePerSegment = 360 / options.length;
-      const randomAngle = (360 * 5) + (randomIndex * anglePerSegment) + anglePerSegment / 2;
-
-      wheel.style.transform = `rotate(${randomAngle}deg)`;
+      wheel.style.transform = `rotate(${rotateTo}deg)`;
 
       setTimeout(() => {
-        resultText.innerHTML = `<strong>${options[randomIndex]}</strong> çıktı!<br><br>
-        🎉 İşte bu benim yeni sayfam.<br>
-        Burada hayallerin gerçekleşiyor, yollar birleşiyor.<br>
-        Her çevirdiğinde bir umut, her durduğunda bir ışık!`;
+        resultText.innerText = `${segments[index]} Puan`;
+        resultBox.style.display = 'block';
         spinning = false;
       }, 4200);
     }
   </script>
-
 </body>
 </html>
