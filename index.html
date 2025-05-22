@@ -6,32 +6,47 @@
   <title>Wisht My Dreams</title>
   <style>
     body {
-      font-family: 'Arial', sans-serif;
-      background: #f8f9fa;
+      font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
+      background-color: #f4f4f4;
       text-align: center;
     }
 
     header {
-      background: #343a40;
+      background-color: #343a40;
       color: white;
-      padding: 20px 0;
+      padding: 30px 0;
+    }
+
+    h1 {
+      margin: 0;
     }
 
     section {
-      padding: 40px 20px;
+      padding: 30px 20px;
     }
 
-    h1, h2 {
-      margin-bottom: 20px;
+    #pointer {
+      width: 0;
+      height: 0;
+      border-left: 20px solid transparent;
+      border-right: 20px solid transparent;
+      border-bottom: 30px solid red;
+      margin: 20px auto -10px;
+    }
+
+    #wheel-container {
+      position: relative;
+      width: 350px;
+      height: 350px;
+      margin: 0 auto;
     }
 
     #wheel {
-      width: 350px;
-      height: 350px;
+      width: 100%;
+      height: 100%;
       border-radius: 50%;
-      margin: 40px auto 20px;
       transition: transform 4s cubic-bezier(.33,1,.68,1);
       background:
         conic-gradient(
@@ -48,83 +63,93 @@
       box-shadow: 0 0 10px rgba(0,0,0,0.3);
     }
 
-    #wheel div {
+    .label {
       position: absolute;
-      left: 50%;
-      top: 50%;
-      transform-origin: center center;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transform-origin: center;
+    }
+
+    .label span {
+      position: absolute;
+      transform: translateY(-140px);
       font-weight: bold;
-      font-size: 18px;
-      pointer-events: none;
+      font-size: 16px;
+      background: white;
+      padding: 3px 7px;
+      border-radius: 5px;
+      box-shadow: 0 0 3px rgba(0,0,0,0.2);
     }
 
     #spinBtn {
-      padding: 12px 25px;
+      margin-top: 20px;
+      padding: 10px 20px;
       font-size: 18px;
-      background: #28a745;
+      background-color: #28a745;
       color: white;
       border: none;
       border-radius: 8px;
       cursor: pointer;
-      margin-top: 20px;
-    }
-
-    #pointer {
-      width: 0;
-      height: 0;
-      border-left: 20px solid transparent;
-      border-right: 20px solid transparent;
-      border-bottom: 30px solid red;
-      margin: 0 auto -15px;
     }
 
     footer {
-      margin-top: 40px;
+      margin-top: 50px;
       font-size: 16px;
-      color: #555;
-      padding-bottom: 40px;
+      color: #333;
+      padding: 20px;
     }
+
   </style>
 </head>
 <body>
+
   <header>
     <h1>Wisht My Dreams</h1>
-    <p>Hayallerine bir adım daha yaklaş</p>
+    <p>Hayallerini yaşa, şansını dene!</p>
   </header>
 
   <section>
-    <h2>Hoş Geldin!</h2>
-    <p>Bu platform, hayallerini gerçekleştirmek isteyenler için hazırlandı. Şansını dene ve sürpriz ödülleri yakala!</p>
+    <h2>Hikayemiz</h2>
+    <p>Burası senin mevcut yazıların için bir alan. Eski içerikler burada duracak, istersek sonra düzenleriz.</p>
   </section>
 
   <section>
     <h2>Şans Çarkı</h2>
     <div id="pointer"></div>
-    <div id="wheel"></div>
+    <div id="wheel-container">
+      <div id="wheel"></div>
+    </div>
     <button id="spinBtn">Çevir!</button>
   </section>
 
   <footer>
     🎁 Kazandığınız ödülü almak için seçilen tutarı aşağıdaki IBAN’a gönderebilirsiniz.<br><br>
-    <strong>IBAN:</strong> TR00 0000 0000 0000 0000 0000 00
+    <strong>IBAN:</strong> TR15 1515 0000 0000 0000 0000 00
   </footer>
 
   <script>
     const wheel = document.getElementById('wheel');
-    const labels = ['100₺','250₺','500₺','150₺','300₺','50₺','200₺','400₺'];
-    labels.forEach((txt, i) => {
-      const el = document.createElement('div');
-      el.textContent = txt;
-      el.style.transform = `rotate(${i * 45 + 22.5}deg) translateY(-150px) rotate(-${i * 45 + 22.5}deg)`;
-      wheel.appendChild(el);
+    const labels = ['100₺','250₺','1000₺','150₺','300₺','50₺','2000₺','4000₺'];
+
+    labels.forEach((text, i) => {
+      const deg = i * 45;
+      const label = document.createElement('div');
+      label.className = 'label';
+      label.style.transform = `rotate(${deg}deg)`;
+      label.innerHTML = `<span style="transform: rotate(-${deg}deg)">${text}</span>`;
+      wheel.appendChild(label);
     });
 
     let totalRotation = 0;
     document.getElementById('spinBtn').addEventListener('click', () => {
-      const extra = 360 * 3 + Math.floor(Math.random() * 360);
-      totalRotation += extra;
+      const randomRotation = 360 * 3 + Math.floor(Math.random() * 360);
+      totalRotation += randomRotation;
       wheel.style.transform = `rotate(${totalRotation}deg)`;
     });
   </script>
+
 </body>
 </html>
