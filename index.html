@@ -80,3 +80,72 @@
   <section>
     <h2>İletişim</h2>
     <p>Bize ulaşmak için email@example.com ad
+<!-- —— ŞANS ÇARKI BAŞLANGIÇ —— -->
+<section id="spin-section" style="margin:60px 0;">
+  <h2>Şans Çarkı</h2>
+
+  <!-- Sabit gösterge -->
+  <div style="
+        width:0;height:0;
+        border-left:20px solid transparent;
+        border-right:20px solid transparent;
+        border-bottom:30px solid red;
+        margin:0 auto -12px;
+      ">
+  </div>
+
+  <!-- Çark -->
+  <div id="wheel" style="
+        width:320px;height:320px;border-radius:50%;
+        margin:0 auto;transition:transform 4s cubic-bezier(.33,1,.68,1);
+        background:
+          conic-gradient(
+            #ffdd55 0deg   45deg,
+            #ffee88 45deg  90deg,
+            #ffdd55 90deg  135deg,
+            #ffee88 135deg 180deg,
+            #ffdd55 180deg 225deg,
+            #ffee88 225deg 270deg,
+            #ffdd55 270deg 315deg,
+            #ffee88 315deg 360deg
+          );
+        position:relative;
+      ">
+      <!-- Etiketler -->
+      <script>
+        const labels=['100₺','250₺','500₺','150₺','300₺','50₺','200₺','400₺'];
+        const wheel=document.currentScript.parentElement;
+        labels.forEach((txt,i)=>{
+          const el=document.createElement('div');
+          el.textContent=txt;
+          el.style.cssText=`
+            position:absolute;
+            left:50%;top:50%;
+            transform:rotate(${45*i+22.5}deg) translateY(-130px) rotate(-${45*i+22.5}deg);
+            font:bold 18px/1 Arial, sans-serif;
+            pointer-events:none;
+          `;
+          wheel.appendChild(el);
+        });
+      </script>
+  </div>
+
+  <button id="spinBtn" style="
+        margin-top:25px;padding:10px 28px;font-size:18px;
+        background:#28a745;color:#fff;border:none;border-radius:8px;cursor:pointer;">
+    Çevir!
+  </button>
+</section>
+
+<script>
+  const spinBtn=document.getElementById('spinBtn');
+  const wheelEl=document.getElementById('wheel');
+  let totalRotation=0;
+  spinBtn.addEventListener('click',()=>{
+    const extra=360*3+Math.floor(Math.random()*360); // 3 tur + rastgele
+    totalRotation+=extra;
+    wheelEl.style.transform=`rotate(${totalRotation}deg)`;
+  });
+</script>
+<!-- —— ŞANS ÇARKI BİTİŞ —— -->
+ 
