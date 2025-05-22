@@ -3,149 +3,78 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>WishtMyDreams – Test Site</title>
-
-  <!-- ==== Temel Stil ==== -->
+  <title>Benim Yeni Sayfam</title>
   <style>
-    /* Genel gövde */
-    body{
-      margin:0;padding:0;
-      font-family:'Segoe UI',sans-serif;
-      background:#090a0f;
-      color:#fff;
-      text-align:center;
+    body {
+      margin: 0; padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom, #111, #1f1f1f);
+      color: #fff;
+      line-height: 1.7;
     }
-
-    /* Yıldızlı arka plan (hareketli) */
-    .stars::after{
-      content:"";
-      position:fixed;
-      top:0;left:0;width:200%;height:200%;
-      background:url("https://www.transparenttextures.com/patterns/stardust.png") repeat;
-      animation:moveStars 120s linear infinite;
-      opacity:0.25;pointer-events:none;z-index:-1;
+    header, section, footer {
+      max-width: 800px;
+      margin: auto;
+      padding: 40px 20px;
     }
-    @keyframes moveStars{0%{transform:translate(0,0);}100%{transform:translate(-600px,-600px);}}
-
-    /* Hero – giriş bölümü */
-    header{
-      padding:60px 20px 40px;
+    header h1 {
+      font-size: 32px;
+      color: #f1c40f;
+      margin-bottom: 20px;
     }
-    header h1{
-      font-size:34px;
-      margin:0 0 10px;
-      color:#f1c40f;
-      text-shadow:0 0 12px #f39c12;
+    img {
+      max-width: 100%;
+      margin: 20px 0;
+      border-radius: 12px;
+      box-shadow: 0 0 14px rgba(255,255,255,0.1);
     }
-    header p{
-      margin:0;
-      font-size:18px;
-      color:#e0e0e0;
+    section h2 {
+      color: #e67e22;
+      margin-top: 0;
     }
-
-    /* Çark alanı */
-    .wheel-wrap{
-      margin:40px auto 0;
-      width:320px;height:320px;position:relative;
+    footer {
+      text-align: center;
+      font-size: 14px;
+      color: #ccc;
+      border-top: 1px solid #333;
     }
-    .wheel{
-      width:100%;height:100%;border-radius:50%;
-      border:8px solid #fff;box-shadow:0 0 14px #fff;
-      background:conic-gradient(
-        #f39c12 0deg 45deg,#e74c3c 45deg 90deg,
-        #9b59b6 90deg 135deg,#3498db 135deg 180deg,
-        #2ecc71 180deg 225deg,#e67e22 225deg 270deg,
-        #1abc9c 270deg 315deg,#d35400 315deg 360deg
-      );
-      transition:transform 4s ease-out;
-    }
-    .arrow{
-      position:absolute;top:-36px;left:50%;transform:translateX(-50%);
-      width:0;height:0;border-left:18px solid transparent;border-right:18px solid transparent;border-bottom:36px solid #fff;
-    }
-    .spin-btn{
-      margin-top:25px;padding:14px 30px;font-size:20px;cursor:pointer;
-      background:#8e44ad;border:none;border-radius:12px;color:#fff;
-      box-shadow:0 0 12px #8e44ad;transition:background .25s;
-    }
-    .spin-btn:hover{background:#5e3290;}
-
-    /* Sonuç kutusu */
-    #resultBox{
-      display:none;margin:30px auto;width:min(90%,360px);
-      background:rgba(255,255,255,0.12);padding:20px;border-radius:14px;
-      border:2px solid #f1c40f;box-shadow:0 0 18px #f1c40f;
-    }
-    #resultBox h2{margin:0 0 8px;color:#f1c40f;font-size:24px;}
-    #resultBox p{margin:0;font-size:16px;color:#ddd;}
-
-    /* Alt tanıtım bölümü */
-    .about{
-      margin:60px auto 100px;width:min(90%,600px);
-      background:rgba(255,255,255,0.07);padding:24px;border-radius:16px;
-      border:1px solid rgba(255,255,255,0.2);
-      backdrop-filter:blur(4px);
-    }
-    .about h3{margin:0 0 10px;font-size:22px;color:#f1c40f;}
-    .about p{margin:0;font-size:15px;color:#dcdcdc;}
-
   </style>
 </head>
 <body>
-  <div class="stars"></div>
 
-  <!-- Giriş / karşılama -->
+  <!-- Giriş -->
   <header>
-    <h1>Burası Benim Yeni Test Sitem</h1>
-    <p>Hayalleri döndür, şansını belirle!</p>
+    <h1>Merhaba, Benim Yeni Sayfama Hoşgeldiniz!</h1>
+    <p>
+      Bu sayfa benim için küçük ama anlamlı bir başlangıç. Henüz hiçbir şey tam değil, ama her satırı, her adımı kendim öğrenerek inşa ediyorum. Kod yazmayı bilmiyordum ama artık küçük bir şeyler yapabiliyorum. Bu sayfa da tamamen kendi çabamla oluştu.  
+      <br><br>
+      Öğreniyorum. HTML nedir, nasıl çalışır, bir site nasıl görünür... Hepsini tek tek deniyorum. Burası bir portfolyo değil, bir vitrin de değil — sadece benim gelişim defterim. Herkes bir yerden başlıyor; ben de buradan başladım.
+      <br><br>
+      Bu sayfayı sürekli güncellemeye, daha fazlasını öğrenip buraya yansıtmaya çalışacağım. Sade tutmak istedim çünkü öğrenme sürecinde en çok sade şeyler dikkatimi çekiyor. Umarım siz de sayfayı gezerken bunu hissedersiniz.
+    </p>
+    <img src="https://source.unsplash.com/800x400/?stars,night" alt="Yıldızlı Gökyüzü" />
   </header>
 
-  <!-- Çark -->
-  <div class="wheel-wrap">
-    <div class="arrow"></div>
-    <div id="wheel" class="wheel"></div>
-  </div>
-  <button class="spin-btn" onclick="spin()">ÇEVİR</button>
-
-  <!-- Çark sonucunu gösteren kutu -->
-  <div id="resultBox">
-    <h2><span id="resultVal"></span> Puan Kazandın!</h2>
-    <p>İşte bu benim yeni sayfam. Hayallerim kodla birleşti;  
-       her dönüş, yeni bir başlangıç demek!</p>
-  </div>
-
-  <!-- Her zaman görünen tanıtım yazısı -->
-  <section class="about">
-    <h3>WishtMyDreams Nedir?</h3>
-    <p>Hayallerini seçip, yolculuğunu başlatabileceğin deneysel bir platform.  
-       Çarkı çevir, çıkan sayıyla ilk adımını at: ister 100 ister 800&#8230;  
-       Burada sınır yok, şans senin yanında!</p>
+  <!-- Gelişim Kısmı -->
+  <section>
+    <h2>Gelişim Yolculuğum</h2>
+    <p>
+      Web geliştirme dünyasına yeni adım attım. Başta her şey çok karışık geliyordu ama zamanla bazı temel şeyleri öğrendim: HTML etiketleri, CSS ile stil verme, resim ekleme, yazı hizalama gibi konulara ufak ufak hakim olmaya başladım.
+      <br><br>
+      Bu projeyi yaparken ChatGPT'den yardım aldım. Anlamadığım yerlerde sormaktan hiç çekinmedim, çünkü öğrenmenin en hızlı yolu budur. Her geri bildirim, her yanlışım, daha iyisini yapabilmem için bir adımdı.  
+      <br><br>
+      Henüz JavaScript'e geçmedim ama yakın zamanda çarklı sistem gibi interaktif şeyler eklemeyi planlıyorum. Şu anda amacım sadece sade, anlaşılır ve bana ait olan bir şey ortaya koymak.  
+    </p>
+    <img src="https://source.unsplash.com/800x400/?learning,coding" alt="Kod öğrenen biri" />
   </section>
 
-  <!-- ==== Çark JavaScript'i ==== -->
-  <script>
-    const wheel     = document.getElementById("wheel");
-    const resultBox = document.getElementById("resultBox");
-    const resultVal = document.getElementById("resultVal");
-    const segments  = [100,200,300,400,500,600,700,800];
-    const segAngle  = 360 / segments.length;
-    let spinning    = false;
+  <!-- Kapanış -->
+  <footer>
+    <p>Bu sadece bir başlangıçtı.  
+    Sayfama uğradığınız için teşekkür ederim.  
+    Yeni şeyler denemeye ve burayı geliştirmeye devam edeceğim.<br><br>
+    Sevgiyle kalın – wishtmydreams.pro 💫</p>
+  </footer>
 
-    function spin(){
-      if(spinning) return;
-      spinning = true;
-
-      const idx       = Math.floor(Math.random()*segments.length);
-      const degTarget = 360*5 + idx*segAngle + segAngle/2;
-
-      wheel.style.transform = `rotate(${degTarget}deg)`;
-
-      setTimeout(() => {
-        resultVal.textContent = segments[idx];
-        resultBox.style.display = "block";
-        spinning = false;
-      },4200);
-    }
-  </script>
 </body>
 </html>
