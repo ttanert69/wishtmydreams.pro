@@ -3,164 +3,148 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>WishtMyDreams</title>
+  <title>WishtMyDreams – Test Site</title>
+
+  <!-- ==== Temel Stil ==== -->
   <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: radial-gradient(ellipse at center, #1b2735 0%, #090a0f 100%);
-      color: #fff;
-      overflow-x: hidden;
-      text-align: center;
+    /* Genel gövde */
+    body{
+      margin:0;padding:0;
+      font-family:'Segoe UI',sans-serif;
+      background:#090a0f;
+      color:#fff;
+      text-align:center;
     }
 
-    h1 {
-      margin-top: 40px;
-      font-size: 28px;
-      color: #f1c40f;
-      text-shadow: 0 0 10px #f39c12;
+    /* Yıldızlı arka plan (hareketli) */
+    .stars::after{
+      content:"";
+      position:fixed;
+      top:0;left:0;width:200%;height:200%;
+      background:url("https://www.transparenttextures.com/patterns/stardust.png") repeat;
+      animation:moveStars 120s linear infinite;
+      opacity:0.25;pointer-events:none;z-index:-1;
+    }
+    @keyframes moveStars{0%{transform:translate(0,0);}100%{transform:translate(-600px,-600px);}}
+
+    /* Hero – giriş bölümü */
+    header{
+      padding:60px 20px 40px;
+    }
+    header h1{
+      font-size:34px;
+      margin:0 0 10px;
+      color:#f1c40f;
+      text-shadow:0 0 12px #f39c12;
+    }
+    header p{
+      margin:0;
+      font-size:18px;
+      color:#e0e0e0;
     }
 
-    p {
-      color: #ccc;
-      font-size: 16px;
-      margin-bottom: 30px;
+    /* Çark alanı */
+    .wheel-wrap{
+      margin:40px auto 0;
+      width:320px;height:320px;position:relative;
     }
-
-    .wheel-container {
-      position: relative;
-      width: 300px;
-      height: 300px;
-      margin: 0 auto;
-    }
-
-    .wheel {
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
-      border: 6px solid #fff;
-      background: conic-gradient(
-        #f39c12 0deg 45deg,
-        #e74c3c 45deg 90deg,
-        #9b59b6 90deg 135deg,
-        #3498db 135deg 180deg,
-        #2ecc71 180deg 225deg,
-        #e67e22 225deg 270deg,
-        #1abc9c 270deg 315deg,
-        #d35400 315deg 360deg
+    .wheel{
+      width:100%;height:100%;border-radius:50%;
+      border:8px solid #fff;box-shadow:0 0 14px #fff;
+      background:conic-gradient(
+        #f39c12 0deg 45deg,#e74c3c 45deg 90deg,
+        #9b59b6 90deg 135deg,#3498db 135deg 180deg,
+        #2ecc71 180deg 225deg,#e67e22 225deg 270deg,
+        #1abc9c 270deg 315deg,#d35400 315deg 360deg
       );
-      transition: transform 4s ease-out;
+      transition:transform 4s ease-out;
     }
+    .arrow{
+      position:absolute;top:-36px;left:50%;transform:translateX(-50%);
+      width:0;height:0;border-left:18px solid transparent;border-right:18px solid transparent;border-bottom:36px solid #fff;
+    }
+    .spin-btn{
+      margin-top:25px;padding:14px 30px;font-size:20px;cursor:pointer;
+      background:#8e44ad;border:none;border-radius:12px;color:#fff;
+      box-shadow:0 0 12px #8e44ad;transition:background .25s;
+    }
+    .spin-btn:hover{background:#5e3290;}
 
-    .arrow {
-      position: absolute;
-      top: -30px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 0;
-      height: 0;
-      border-left: 15px solid transparent;
-      border-right: 15px solid transparent;
-      border-bottom: 30px solid #fff;
+    /* Sonuç kutusu */
+    #resultBox{
+      display:none;margin:30px auto;width:min(90%,360px);
+      background:rgba(255,255,255,0.12);padding:20px;border-radius:14px;
+      border:2px solid #f1c40f;box-shadow:0 0 18px #f1c40f;
     }
+    #resultBox h2{margin:0 0 8px;color:#f1c40f;font-size:24px;}
+    #resultBox p{margin:0;font-size:16px;color:#ddd;}
 
-    .spin-btn {
-      margin-top: 20px;
-      padding: 12px 24px;
-      font-size: 18px;
-      background-color: #8e44ad;
-      color: #fff;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
-      box-shadow: 0 0 10px #8e44ad;
+    /* Alt tanıtım bölümü */
+    .about{
+      margin:60px auto 100px;width:min(90%,600px);
+      background:rgba(255,255,255,0.07);padding:24px;border-radius:16px;
+      border:1px solid rgba(255,255,255,0.2);
+      backdrop-filter:blur(4px);
     }
+    .about h3{margin:0 0 10px;font-size:22px;color:#f1c40f;}
+    .about p{margin:0;font-size:15px;color:#dcdcdc;}
 
-    .spin-btn:hover {
-      background-color: #732d91;
-    }
-
-    .result-box {
-      margin: 40px auto;
-      max-width: 300px;
-      background: rgba(255, 255, 255, 0.1);
-      padding: 20px;
-      border-radius: 12px;
-      border: 2px solid #f1c40f;
-      box-shadow: 0 0 20px #f1c40f;
-      display: none;
-    }
-
-    .stars {
-      position: fixed;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      z-index: -1;
-      background: transparent;
-      pointer-events: none;
-    }
-
-    .stars::after {
-      content: "";
-      position: absolute;
-      width: 200%;
-      height: 200%;
-      background: transparent url('https://www.transparenttextures.com/patterns/stardust.png') repeat;
-      animation: moveStars 100s linear infinite;
-      opacity: 0.2;
-    }
-
-    @keyframes moveStars {
-      0% { transform: translate(0, 0); }
-      100% { transform: translate(-500px, -500px); }
-    }
   </style>
 </head>
 <body>
   <div class="stars"></div>
 
-  <h1>WishtMyDreams'e Hoş Geldin</h1>
-  <p>Burası benim yeni test sitem. Denemelerimi burada yapıyorum. Şansını denemek ister misin?</p>
+  <!-- Giriş / karşılama -->
+  <header>
+    <h1>Burası Benim Yeni Test Sitem</h1>
+    <p>Hayalleri döndür, şansını belirle!</p>
+  </header>
 
-  <div class="wheel-container">
+  <!-- Çark -->
+  <div class="wheel-wrap">
     <div class="arrow"></div>
-    <div class="wheel" id="wheel"></div>
+    <div id="wheel" class="wheel"></div>
   </div>
-
   <button class="spin-btn" onclick="spin()">ÇEVİR</button>
 
-  <div class="result-box" id="resultBox">
-    <h2>Sonuç: <span id="result"></span></h2>
-    <p>İşte bu benim yeni sayfam.<br>
-      Hayallerle başladım, kodlarla süsledim.<br>
-      Her şey adım adım başlıyor, tıpkı bu çark gibi...</p>
+  <!-- Çark sonucunu gösteren kutu -->
+  <div id="resultBox">
+    <h2><span id="resultVal"></span> Puan Kazandın!</h2>
+    <p>İşte bu benim yeni sayfam. Hayallerim kodla birleşti;  
+       her dönüş, yeni bir başlangıç demek!</p>
   </div>
 
-  <script>
-    const wheel = document.getElementById('wheel');
-    const resultBox = document.getElementById('resultBox');
-    const resultText = document.getElementById('result');
-    const segments = [100, 200, 300, 400, 500, 600, 700, 800];
-    let spinning = false;
+  <!-- Her zaman görünen tanıtım yazısı -->
+  <section class="about">
+    <h3>WishtMyDreams Nedir?</h3>
+    <p>Hayallerini seçip, yolculuğunu başlatabileceğin deneysel bir platform.  
+       Çarkı çevir, çıkan sayıyla ilk adımını at: ister 100 ister 800&#8230;  
+       Burada sınır yok, şans senin yanında!</p>
+  </section>
 
-    function spin() {
-      if (spinning) return;
+  <!-- ==== Çark JavaScript'i ==== -->
+  <script>
+    const wheel     = document.getElementById("wheel");
+    const resultBox = document.getElementById("resultBox");
+    const resultVal = document.getElementById("resultVal");
+    const segments  = [100,200,300,400,500,600,700,800];
+    const segAngle  = 360 / segments.length;
+    let spinning    = false;
+
+    function spin(){
+      if(spinning) return;
       spinning = true;
 
-      const index = Math.floor(Math.random() * segments.length);
-      const segmentAngle = 360 / segments.length;
-      const rotateTo = 360 * 5 + (index * segmentAngle) + segmentAngle / 2;
+      const idx       = Math.floor(Math.random()*segments.length);
+      const degTarget = 360*5 + idx*segAngle + segAngle/2;
 
-      wheel.style.transform = `rotate(${rotateTo}deg)`;
+      wheel.style.transform = `rotate(${degTarget}deg)`;
 
       setTimeout(() => {
-        resultText.innerText = `${segments[index]} Puan`;
-        resultBox.style.display = 'block';
+        resultVal.textContent = segments[idx];
+        resultBox.style.display = "block";
         spinning = false;
-      }, 4200);
+      },4200);
     }
   </script>
 </body>
