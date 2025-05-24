@@ -5,73 +5,113 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Dilek'in Dijital Güncesi</title>
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+
   body {
-    font-family: 'Georgia', serif;
+    font-family: 'Playfair Display', serif;
     max-width: 700px;
     margin: 40px auto;
-    padding: 0 20px;
-    background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1400&q=80') no-repeat center center fixed;
+    padding: 30px 40px;
+    background: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1400&q=80') no-repeat center center fixed;
     background-size: cover;
-    color: #f0f0f0;
-    line-height: 1.8;
+    color: #e6e6e6;
+    line-height: 2;
   }
 
-  /* Yazıların arka planı hafif transparan koyu kutu, okunaklığı artırmak için */
   .content {
-    background: rgba(0, 0, 30, 0.7);
-    padding: 30px 25px;
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.7);
+    background: rgba(10, 10, 25, 0.75);
+    padding: 30px 40px;
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.7);
+    position: relative;
   }
 
   p {
-    font-size: 1.15em;
-    margin-bottom: 2em;
-    letter-spacing: 0.3px;
+    font-size: 1.3em;
+    margin-bottom: 2.5em;
+    position: relative;
+    padding-left: 50px;
+    padding-right: 50px;
   }
 
-  img {
-    display: block;
-    margin: 20px auto;
-    width: 120px;
-    border-radius: 8px;
-    opacity: 0.9;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.5);
+  /* Sol ve sağdaki küçük ikon/görseller için */
+  p::before, p::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 32px;
+    height: 32px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.75;
+  }
+  p::before {
+    left: 15px;
+  }
+  p::after {
+    right: 15px;
+  }
+
+  /* Her paragraf için farklı ikonlar (başarı, ilham temalı) */
+  p:nth-of-type(1)::before {
+    background-image: url('https://cdn-icons-png.flaticon.com/512/2921/2921222.png'); /* yıldız */
+  }
+  p:nth-of-type(1)::after {
+    background-image: url('https://cdn-icons-png.flaticon.com/512/2917/2917990.png'); /* rozet */
+  }
+
+  p:nth-of-type(2)::before {
+    background-image: url('https://cdn-icons-png.flaticon.com/512/1055/1055646.png'); /* ışık ampulü */
+  }
+  p:nth-of-type(2)::after {
+    background-image: url('https://cdn-icons-png.flaticon.com/512/2089/2089670.png'); /* ok */
+  }
+
+  p:nth-of-type(3)::before {
+    background-image: url('https://cdn-icons-png.flaticon.com/512/528/528094.png'); /* kalp */
+  }
+  p:nth-of-type(3)::after {
+    background-image: url('https://cdn-icons-png.flaticon.com/512/1250/1250682.png'); /* el sıkışma */
+  }
+
+  p:nth-of-type(4)::before {
+    background-image: url('https://cdn-icons-png.flaticon.com/512/2274/2274916.png'); /* ateş */
+  }
+  p:nth-of-type(4)::after {
+    background-image: url('https://cdn-icons-png.flaticon.com/512/889/889692.png'); /* hedef */
   }
 
   .quote {
-    font-family: 'Georgia', serif;
-    font-size: 1.5em;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8em;
     text-align: center;
     color: #ffd87f;
-    margin-top: 60px;
-    padding: 20px;
-    background: rgba(0,0,0,0.5);
-    border-left: 5px solid #ffcc55;
-    border-radius: 10px;
+    margin-top: 70px;
+    padding: 25px;
+    background: rgba(30, 30, 60, 0.85);
+    border-left: 8px solid #ffcc55;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.7);
   }
-
   .quote span {
     font-style: italic;
     color: #f0e6c8;
   }
-
   .quote strong {
     color: #ffdb87;
-    font-weight: 600;
+    font-weight: 700;
   }
 </style>
 </head>
 <body>
   <div class="content">
     <p>
-      Merhaba. Ben Dilek.  
+      Merhaba 
       Bu sayfa, içimde birikenleri sessizce paylaştığım küçük bir dünya.  
       Kodlarla dans ederken, bazen yolumu kaybediyorum ama içimde hep bir umut var:  
       <em>“Yoluma devam edeceğim.”</em>
     </p>
-
-    <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=400&q=80" alt="Minimal defter ve kalem">
 
     <p>
       Sabahlar bana hep taze bir başlangıç gibi geliyor.  
@@ -79,16 +119,12 @@
       Her gün yeni bir his, yeni bir öğrenme.
     </p>
 
-    <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=400&q=80" alt="Yumuşak ışıkta pencere ve çiçek">
-
     <p>
       İçimde sakladığım küçük bir oda var.  
       Orada kendimle buluşurum, sessiz ve sakin.  
       Belki bir fincan çay eşlik eder bu anlara…  
       Çünkü önce kendiyle barışmak gerekir.
     </p>
-
-    <img src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&w=400&q=80" alt="Bir fincan çay ve hafif loş ışık">
 
     <p>
       Hayat akıyor, değişiyor ve ben değişiyorum.  
