@@ -3,87 +3,73 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>İç Sesin - Yazılım Yolculuğu</title>
+<title>İç Sesin</title>
 <style>
   html, body {
     height: 100%;
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
     color: #fff;
     overflow-x: hidden;
-    background: url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?auto=format&fit=crop&w=1470&q=80') no-repeat center center fixed;
-    background-size: cover;
-    position: relative;
   }
-
-  /* Yarı saydam koyu overlay */
   body::before {
     content: "";
     position: fixed;
     top:0; left:0; right:0; bottom:0;
-    background: rgba(0,0,0,0.55);
-    backdrop-filter: brightness(0.75);
+    background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1470&q=80') no-repeat center center fixed;
+    background-size: cover;
+    filter: brightness(0.5) blur(3px);
     z-index: -1;
   }
-
-  /* Ana içerik kutusu */
-  .container {
-    max-width: 750px;
-    margin: 90px auto;
-    padding: 40px 50px;
+  main.container {
+    max-width: 720px;
+    margin: 80px auto 100px auto;
     background: rgba(0,0,0,0.6);
-    border-radius: 20px;
-    box-shadow: 0 0 50px rgba(0,0,0,0.9);
-    position: relative;
-    z-index: 1;
-    animation: fadeIn 2s ease forwards;
-    opacity: 0;
+    padding: 45px 40px;
+    border-radius: 18px;
+    box-shadow: 0 0 45px rgba(0,0,0,0.9);
   }
-
   h1 {
+    font-size: 3.8rem;
     font-weight: 900;
-    font-size: 3.6rem;
-    margin-bottom: 2rem;
+    margin-bottom: 2.4rem;
     text-align: center;
     text-shadow: 0 0 20px rgba(255,255,255,0.9);
   }
-
   p {
-    font-size: 1.5rem;
-    line-height: 2.1;
-    margin-bottom: 1.7rem;
-    letter-spacing: 0.035em;
-    text-shadow: 0 0 10px rgba(0,0,0,0.75);
+    font-size: 1.8rem;
+    line-height: 2.5;
+    margin-bottom: 2rem;
+    letter-spacing: 0.04em;
+    text-shadow: 0 0 12px rgba(0,0,0,0.7);
   }
-
-  .quote {
-    margin-top: 4rem;
-    font-style: italic;
+  p.quote {
+    margin-top: 5rem;
+    font-size: 2.6rem;
     font-weight: 700;
-    text-align: center;
-    font-size: 2rem;
+    font-style: italic;
     color: #ffd93b;
-    text-shadow: 0 0 12px rgba(0,0,0,0.85);
+    text-align: center;
+    text-shadow: 0 0 18px rgba(0,0,0,0.95);
   }
-
-  @keyframes fadeIn {
-    to { opacity: 1; }
-  }
-
   @media (max-width: 768px) {
-    .container {
-      margin: 70px 20px;
-      padding: 35px 30px;
+    main.container {
+      margin: 70px 20px 80px 20px;
+      padding: 40px 25px;
     }
     h1 {
       font-size: 2.8rem;
+      margin-bottom: 1.8rem;
     }
     p {
-      font-size: 1.3rem;
-      line-height: 1.8;
+      font-size: 1.4rem;
+      line-height: 2.1;
+      margin-bottom: 1.6rem;
     }
-    .quote {
-      font-size: 1.6rem;
+    p.quote {
+      font-size: 2rem;
+      margin-top: 3.5rem;
     }
   }
 </style>
@@ -91,13 +77,11 @@
 <body>
   <main class="container" role="main">
     <h1>Merhaba, ben iç sesinim.</h1>
-    <p>Kod, yazılım, algoritma… Aman diyeyim, bu işler bazen “Ne oluyor burada?” dedirtiyor insana! Ama merak etme, burası öyle mükemmel sitelerden değil; burası yeni başlayanların, hata yapmaktan korkmayanların yeri.</p>
-    <p>Amacımız çok basit: Öğrenmek, denemek, yanılmak, sonra tekrar denemek. Çünkü en güzeli, ne kadar hata yaparsak yapalım pes etmemek! Burada mükemmel değil, ilerleyen bir yol var.</p>
-    <p>Ben yazılım öğrenmeye başladım ve kabul ediyorum; ben zor öğrenirim. Bazen kafam allak bullak oluyor, bazen doğru yoldan sapıyorum. Hata yapmak benim için doğal, ama bu yolun bir parçası olduğunu biliyorum.</p>
-    <p>Belki sen de benim gibisin; “Acaba çok mu geç kaldım?” diye düşünüyorsun. Merak etme, ben de o şüpheleri yaşadım. Ama bu platformda öğrendiklerimi paylaşırken, hep birlikte ilerleyeceğiz ve büyüyeceğiz.</p>
-    <p>Hatalarımın üstüne gitmekten korkmuyorum, çünkü biliyorum ki başarı azimle gelir. Zorluklar, sabır ve kararlılıkla aşılır. Kendine inan, yol uzun ama sonunda mutluluk var.</p>
-    <p>Bazen yavaş gidiyoruz, bazen hızlı… Ama önemli olan yürümeye devam etmek. Sesini dinle, kendine güven ve cesurca ilerle.</p>
-
+    <p>Biliyorum, yazılım öğrenmek biraz kahve kokusu, biraz uykusuz gece, biraz da “Acaba doğru mu yapıyorum?” sorusuyla dolu. Evet, ben de zor öğrenirim, bazen kafam öyle karışır ki kendi kendime “Bu iş bana göre değil” derim. Ama işin sırrı şu: Vazgeçmemek!</p>
+    <p>Burada kimse mükemmel değil, burası deneme yanılma laboratuvarı. Hatayı sevin, çünkü hata seni ileriye taşır. Amacım basit: Öğrenmek, yanılmak, pes etmemek.</p>
+    <p>Belki sen de geç kaldığını düşünüyorsun, ama hayır! Bu yolculukta geç kalmak diye bir şey yok. Her adımın kıymeti var, her hata öğretici. Kendine biraz sabır göster, inancını kaybetme.</p>
+    <p>Zorluklarla dolu bir yol bu, bazen yavaş yürürüz, bazen tökezleriz ama önemli olan devam etmek. Ben buradayım, sen buradasın, birlikte ilerleyeceğiz.</p>
+    <p>Son olarak; iç sesine kulak ver, cesur ol, yol uzun ama sonunda gülümseme var!</p>
     <p class="quote">“Hiçbir zaman geç kalmadık, asıl önemli olan vazgeçmemek!”</p>
   </main>
 </body>
