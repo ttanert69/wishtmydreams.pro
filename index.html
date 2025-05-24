@@ -1,102 +1,112 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dilek'in Dijital Güncesi</title>
-  <style>
-    body {
-      font-family: 'Georgia', 'Times New Roman', serif;
-      max-width: 700px;
-      margin: 40px auto;
-      padding: 0 20px;
-      background-image: url('https://images.unsplash.com/photo-1604079628045-cb07b3f1c0b1?auto=format&fit=crop&w=1400&q=80');
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
-      background-repeat: no-repeat;
-      color: #f4f4f4;
-      line-height: 1.8;
-      text-shadow: 0 0 4px #000;
-    }
-background-image: url('https://images.unsplash.com/photo-1604079628045-cb07b3f1c0b1?auto=format&fit=crop&w=1400&q=80');
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Dilek'in Dijital Güncesi</title>
+<style>
+  body {
+    font-family: 'Georgia', serif;
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 0 20px;
+    /* Minimal, yumuşak kuzey ışığı arka plan, hafif bulanık */
+    background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1400&q=80') no-repeat center center fixed;
+    background-size: cover;
+    filter: brightness(0.35) blur(3px);
+    position: relative;
+    color: #eee;
+  }
 
-    img {
-      display: block;
-      margin: 20px auto;
-      width: 45%;
-      height: auto;
-      border-radius: 10px;
-      opacity: 0.88;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-    }
+  /* Arka plan bulanıklığını yazıya etkilemeden yapmak için pseudo element */
+  body::before {
+    content: "";
+    position: fixed;
+    top:0; left:0; right:0; bottom:0;
+    background: inherit;
+    filter: brightness(0.35) blur(6px);
+    z-index: -1;
+  }
 
-    p {
-      font-size: 1.15em;
-      margin-bottom: 2em;
-      letter-spacing: 0.3px;
-    }
+  p {
+    font-size: 1.15em;
+    margin-bottom: 2em;
+    line-height: 1.7;
+    letter-spacing: 0.3px;
+    text-shadow: 0 0 4px #000;
+    position: relative;
+    z-index: 1;
+  }
 
-    .quote {
-      font-family: 'Georgia', serif;
-      font-size: 1.6em;
-      text-align: center;
-      color: #ffe7aa;
-      margin-top: 60px;
-      padding: 20px;
-      background: rgba(0, 0, 0, 0.4);
-      border-left: 6px solid #ffdd88;
-      border-radius: 12px;
-    }
+  img {
+    display: block;
+    margin: 20px auto;
+    width: 120px; /* Minimal küçük boyut */
+    border-radius: 8px;
+    opacity: 0.9;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.5);
+    position: relative;
+    z-index: 1;
+  }
 
-    .quote span {
-      font-style: italic;
-      color: #ddd;
-    }
+  .quote {
+    font-family: 'Georgia', serif;
+    font-size: 1.5em;
+    text-align: center;
+    color: #ffd98e;
+    margin-top: 60px;
+    padding: 20px;
+    background: rgba(0,0,0,0.45);
+    border-left: 5px solid #ffcc55;
+    border-radius: 10px;
+    text-shadow: 0 0 3px #000;
+    position: relative;
+    z-index: 1;
+  }
 
-    .quote strong {
-      color: #ffda77;
-      font-weight: 600;
-    }
-  </style>
+  .quote span {
+    font-style: italic;
+    color: #f0e6c8;
+  }
+
+  .quote strong {
+    color: #ffdb87;
+    font-weight: 600;
+  }
+</style>
 </head>
 <body>
 
   <p>
     Merhaba. Ben Dilek.  
-    Bu sayfa, içimde birikenleri dışa vurduğum küçük bir yer.  
-    Kodları, kelimeleri ve kendi iç sesimi anlamaya çalışıyorum.  
-    Her şey tam oturmuyor belki ama içimdeki o tanıdık his diyor ki:  
-    <em>“Yolundayım.”</em>
+    Bu sayfa, içimde birikenleri sessizce paylaştığım küçük bir dünya.  
+    Kodlarla dans ederken, bazen yolumu kaybediyorum ama içimde hep bir umut var:  
+    <em>“Yoluma devam edeceğim.”</em>
   </p>
 
-  <img src="https://images.unsplash.com/photo-1503220317375-aaad61436b1b?auto=format&fit=crop&w=600&q=80" alt="Yalnız bir defter, boş bir masa">
+  <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=400&q=80" alt="Minimal defter ve kalem">
 
   <p>
-    Sabahlar biraz masum benim için.  
-    Yeni başlayan bir hikâyenin ilk satırları gibi.  
-    Ne hissedeceğimi, ne öğreneceğimi bilmeden uyanıyorum.  
-    Ama işte bu bilinmezlik, bana yaşadığımı hatırlatıyor.
+    Sabahlar bana hep taze bir başlangıç gibi geliyor.  
+    Bilmediğim sayfalar açılıyor gözlerimin önünde.  
+    Her gün yeni bir his, yeni bir öğrenme.
   </p>
 
-  <img src="https://images.unsplash.com/photo-1534982841079-afde227ada8f?auto=format&fit=crop&w=600&q=80" alt="Yumuşak ışıkta minimal bir pencere">
+  <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=400&q=80" alt="Yumuşak ışıkta pencere ve çiçek">
 
   <p>
-    Herkesin içinde sessiz bir oda vardır.  
-    Bazen oraya çekilirim.  
-    Kimseye söylemeden, kendimle otururum.  
-    Belki bir fincan çay eşlik eder bu sessizliğe…  
-    Çünkü dışarının gürültüsünden önce, insan kendiyle barışmalı.
+    İçimde sakladığım küçük bir oda var.  
+    Orada kendimle buluşurum, sessiz ve sakin.  
+    Belki bir fincan çay eşlik eder bu anlara…  
+    Çünkü önce kendiyle barışmak gerekir.
   </p>
 
-  <img src="https://images.unsplash.com/photo-1516557070061-e4b749b18154?auto=format&fit=crop&w=600&q=80" alt="Bir fincan çay ve loş bir an">
+  <img src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&w=400&q=80" alt="Bir fincan çay ve hafif loş ışık">
 
   <p>
-    Hayat hep aktıkça, ben de değişiyorum.  
-    Kimi günlerde içimde gri bulutlar dolaşsa da,  
-    içimde hep yanmaya devam eden küçük bir ışık var.  
-    O ışık bana, “Devam et,” diyor.  
-    Ben de ediyorum.
+    Hayat akıyor, değişiyor ve ben değişiyorum.  
+    Kimi zaman bulutlu günler olsa da, içimde hep yanmaya devam eden küçük bir ışık var.  
+    O ışık bana diyor ki: “İlerle, durma.”
   </p>
 
   <p class="quote">
