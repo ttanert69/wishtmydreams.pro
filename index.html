@@ -5,46 +5,52 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Dilek'in Dijital Güncesi</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;1,400&display=swap');
 
   body {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Montserrat', sans-serif;
     max-width: 700px;
     margin: 40px auto;
     padding: 30px 40px;
-    background: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1400&q=80') no-repeat center center fixed;
+    background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1400&q=80') no-repeat center center fixed;
     background-size: cover;
     color: #e6e6e6;
-    line-height: 2;
+    line-height: 1.8;
   }
 
   .content {
-    background: rgba(10, 10, 25, 0.75);
-    padding: 30px 40px;
+    background: rgba(25, 0, 40, 0.78);
+    padding: 35px 45px;
     border-radius: 15px;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.7);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.85);
     position: relative;
   }
 
   p {
-    font-size: 1.3em;
+    font-size: 1.35em;
     margin-bottom: 2.5em;
     position: relative;
     padding-left: 50px;
     padding-right: 50px;
+    font-weight: 400;
   }
 
-  /* Sol ve sağdaki küçük ikon/görseller için */
+  p em {
+    font-style: italic;
+    color: #d4a5ff;
+    font-weight: 600;
+  }
+
   p::before, p::after {
     content: "";
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    width: 32px;
-    height: 32px;
+    width: 28px;
+    height: 28px;
     background-size: contain;
     background-repeat: no-repeat;
-    opacity: 0.75;
+    opacity: 0.85;
   }
   p::before {
     left: 15px;
@@ -53,53 +59,54 @@
     right: 15px;
   }
 
-  /* Her paragraf için farklı ikonlar (başarı, ilham temalı) */
+  /* Minimal ve modern ikonlar */
   p:nth-of-type(1)::before {
-    background-image: url('https://cdn-icons-png.flaticon.com/512/2921/2921222.png'); /* yıldız */
+    background-image: url('https://cdn-icons-png.flaticon.com/512/616/616408.png'); /* yıldız mor */
   }
   p:nth-of-type(1)::after {
-    background-image: url('https://cdn-icons-png.flaticon.com/512/2917/2917990.png'); /* rozet */
+    background-image: url('https://cdn-icons-png.flaticon.com/512/833/833472.png'); /* ödül rozet */
   }
 
   p:nth-of-type(2)::before {
     background-image: url('https://cdn-icons-png.flaticon.com/512/1055/1055646.png'); /* ışık ampulü */
   }
   p:nth-of-type(2)::after {
-    background-image: url('https://cdn-icons-png.flaticon.com/512/2089/2089670.png'); /* ok */
+    background-image: url('https://cdn-icons-png.flaticon.com/512/271/271228.png'); /* ok */
   }
 
   p:nth-of-type(3)::before {
-    background-image: url('https://cdn-icons-png.flaticon.com/512/528/528094.png'); /* kalp */
+    background-image: url('https://cdn-icons-png.flaticon.com/512/616/616408.png'); /* mor yıldız */
   }
   p:nth-of-type(3)::after {
-    background-image: url('https://cdn-icons-png.flaticon.com/512/1250/1250682.png'); /* el sıkışma */
+    background-image: url('https://cdn-icons-png.flaticon.com/512/3135/3135715.png'); /* el sıkışma */
   }
 
   p:nth-of-type(4)::before {
-    background-image: url('https://cdn-icons-png.flaticon.com/512/2274/2274916.png'); /* ateş */
+    background-image: url('https://cdn-icons-png.flaticon.com/512/1055/1055646.png'); /* ampul */
   }
   p:nth-of-type(4)::after {
-    background-image: url('https://cdn-icons-png.flaticon.com/512/889/889692.png'); /* hedef */
+    background-image: url('https://cdn-icons-png.flaticon.com/512/833/833314.png'); /* hedef */
   }
 
   .quote {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.8em;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.9em;
     text-align: center;
-    color: #ffd87f;
+    color: #ffcbff;
     margin-top: 70px;
-    padding: 25px;
-    background: rgba(30, 30, 60, 0.85);
-    border-left: 8px solid #ffcc55;
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.7);
+    padding: 28px;
+    background: rgba(50, 10, 70, 0.88);
+    border-left: 8px solid #d48aff;
+    border-radius: 14px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.75);
+    font-weight: 600;
   }
   .quote span {
     font-style: italic;
-    color: #f0e6c8;
+    color: #f5e1ff;
   }
   .quote strong {
-    color: #ffdb87;
+    color: #ff8aff;
     font-weight: 700;
   }
 </style>
@@ -107,7 +114,7 @@
 <body>
   <div class="content">
     <p>
-      Merhaba 
+      Merhaba. Ben Dilek.  
       Bu sayfa, içimde birikenleri sessizce paylaştığım küçük bir dünya.  
       Kodlarla dans ederken, bazen yolumu kaybediyorum ama içimde hep bir umut var:  
       <em>“Yoluma devam edeceğim.”</em>
