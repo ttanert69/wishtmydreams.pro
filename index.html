@@ -3,125 +3,95 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Wisht My Dreams - Yeni Sayfam</title>
+  <title>Wisht My Dreams</title>
   <style>
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);
-      color: #fff;
-      line-height: 1.8;
+      background: linear-gradient(to bottom, #000000, #222222);
+      color: white;
     }
-    header, section, footer {
-      max-width: 900px;
-      margin: auto;
-      padding: 50px 20px;
-    }
-    h1, h2 {
-      color: #f9ca24;
-      text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
-    }
-    p {
-      font-size: 17px;
-    }
-    img {
-      width: 100%;
-      border-radius: 12px;
-      box-shadow: 0 0 16px rgba(0,0,0,0.5);
-      margin: 30px 0;
-    }
-    section {
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    }
-    footer {
+
+    .hero {
+      background-image: url('https://source.unsplash.com/1600x900/?sky,dream');
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       text-align: center;
-      color: #ccc;
-      padding-bottom: 60px;
+      padding: 0 30px;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 4px #000;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 800px;
+      line-height: 1.6;
+      text-shadow: 1px 1px 2px #000;
+    }
+
+    .section {
+      padding: 60px 30px;
+      text-align: center;
+    }
+
+    .section h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    .section p {
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      line-height: 1.7;
+    }
+
+    .image-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .image-grid img {
+      width: 300px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
     }
   </style>
 </head>
 <body>
 
-  <!-- GİRİŞ -->
-  <header>
-    <h1>Hoş Geldin!</h1>
-    <p>
-      Selam! Burası benim yeni test sitem. Kodlamaya adım attığım ilk günden beri her satırı deneme yanılma ile keşfediyorum. Kusursuz değil ama tamamen bana ait: hatalarım, başarılarım, sürprizlerim… Hepsi burada. Amacım hem öğrenmek hem de öğrendiklerimi paylaşmak. Belki bu satırlar sana da cesaret verir ve kendi yolculuğuna başlarsın.
-    </p>
-    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1400&q=80" alt="Hoş geldin görseli">
-  </header>
+  <div class="hero">
+    <h1>Geç Kalmadık</h1>
+    <p>Hayaller için hiçbir zaman geç değil. Bugün öğrendik, bugün düştük, ama yeniden kalktık. Şimdi kendi yolumuzu çiziyoruz. Her gün gelişiyoruz. Her gün deniyoruz. Ve bu bizim yolculuğumuz.</p>
+  </div>
 
-  <!-- DÜNYA BİLGİ -->
-  <section>
-    <h2>Dünya Ne Kadar Büyük?</h2>
-    <p>
-      Dünya'nın çapı 12.742 kilometre ve yüzeyinin %71'i suyla kaplı. Buna rağmen okyanusların büyük kısmı hâlâ keşfedilmedi. Gezegenimiz eşsiz çeşitliliğiyle bize her gün yeni bir mucize sunuyor.
-    </p>
-    <img src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=1400&q=80" alt="Dünya resmi">
-  </section>
+  <div class="section">
+    <h2>Ne İçin Buradayız?</h2>
+    <p>Bu platform bir vitrin değil, bir mücadele günlüğü. Başladığımız ama bitiremediğimiz projeler, ertelediğimiz hayaller, içimizde büyüttüğümüz umutlar… Hepsi burada, bizimle. Geçmişteki “yapamadıklarımız” bizi değil, biz onları yöneteceğiz.</p>
+  </div>
 
-  <!-- UZAY BİLGİ -->
-  <section>
-    <h2>Uzay Sonsuz mu?</h2>
-    <p>
-      Samanyolu Galaksisi'nde bile milyarlarca gezegen var. Bilim insanları Mars, Europa gibi gök cisimlerinde yaşam izleri arıyor. Evrenin genişlemesi sonsuz mu, sınırlı mı? Cevap arayışımız devam ediyor.
-    </p>
-    <img src="https://images.unsplash.com/photo-1589656966895-2f31c9b5f3ed?auto=format&fit=crop&w=1400&q=80" alt="Uzay görseli">
-  </section>
-
-  <!-- OKYANUSLAR BİLGİ -->
-  <section>
-    <h2>Derinliklerin Sessizliği: Okyanuslar</h2>
-    <p>
-      Okyanusların %80'i keşfedilmedi. En derin nokta Mariana Çukuru 11.000 metredir. Derinliklerde yaşayan canlılar bizi hâlâ şaşırtıyor.
-    </p>
-    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1400&q=80" alt="Okyanus görseli">
-  </section>
-
-  <!-- İKLİM DEĞİŞİKLİĞİ -->
-  <section>
-    <h2>İklim Değişikliği ve Biz</h2>
-    <p>
-      Son yüzyılda ortalama sıcaklık yaklaşık 1.2°C arttı. Küresel ısınma; eriyen buzullar, yükselen deniz seviyeleri ve ekstrem hava olaylarıyla kendini gösteriyor. Her bireyin karbon ayak izi var. Ben bile bu siteyi barındırırken enerji harcıyorum. Küçük seçimler — bisiklete binmek, tek kullanımlık plastikten kaçınmak — büyük değişim yaratabilir.
-    </p>
-    <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1400&q=80" alt="İklim görseli">
-  </section>
-
-  <!-- TEKNOLOJİ VE GELECEK -->
-  <section>
-    <h2>Teknoloji ve Gelecek</h2>
-    <p>
-      Yapay zekâ, kuantum bilişim, sürdürülebilir enerji… Gelecek, hayal gücümüzle şekilleniyor. ChatGPT gibi modellerle kod yazmayı hızlandırmak artık mümkün. Ben de bu projeyi yaparken asistansından faydalanıyorum. Bunun ötesinde, etik sorular büyüyor: Teknolojiyi nasıl sorumlu kullanacağız?
-    </p>
-    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1400&q=80" alt="Teknoloji görseli">
-  </section>
-
-  <!-- İNSAN BEYNİ -->
-  <section>
-    <h2>İnsan Beyni: 86 Milyar Nöron</h2>
-    <p>
-      Beynimiz 1.4 kg ağırlığında ama evrende bildiğimiz en karmaşık yapı. Yaklaşık 86 milyar nöron ve tril­yonlarca bağlantı… Tüm bu sinir ağları düşünmemizi, hayal etmemizi, sevgi hissetmemizi sağlıyor. Bilinç hâlâ çözülmemiş bir sır.
-    </p>
-    <img src="https://images.unsplash.com/photo-1523978591478-c753949ff840?auto=format&fit=crop&w=1400&q=80" alt="Beyin görseli">
-  </section>
-
-  <!-- SANAT VE HAYAL GÜCÜ -->
-  <section>
-    <h2>Sanat ve Hayal Gücü</h2>
-    <p>
-      Sanat, insan ruhunun dili. Bir resim, bir şarkı ya da bir satır şiir; hayal gücümüzü somutlaştırır. Ben de kod satırlarını tuval gibi görüyorum. Her satır bir fırça darbesi, her stil bir renk tonu… Bu site de benim dijital tuvalim.
-    </p>
-    <img src="https://images.unsplash.com/photo-1517511620798-cec17d428bc0?auto=format&fit=crop&w=1400&q=80" alt="Sanat görseli">
-  </section>
-
-  <!-- KAPANIŞ -->
-  <footer>
-    <p>
-      Buraya kadar geldiğin için teşekkür ederim 🙏 Bu yolculuk benim için değerli. Umarım sen de okurken yeni bir şey öğrendin veya ilham aldın. Yol uzun, hayaller büyük; birlikte keşfetmeye devam edelim.
-      <br><br>
-      wishtmydreams.pro 💫
-    </p>
-  </footer>
+  <div class="section">
+    <h2>Görsellerle Yolculuğumuz</h2>
+    <div class="image-grid">
+      <img src="https://source.unsplash.com/300x200/?coding">
+      <img src="https://source.unsplash.com/300x200/?motivation">
+      <img src="https://source.unsplash.com/300x200/?learning">
+      <img src="https://source.unsplash.com/300x200/?growth">
+    </div>
+  </div>
 
 </body>
 </html>
