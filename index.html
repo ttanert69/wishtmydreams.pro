@@ -10,58 +10,45 @@
     max-width: 700px;
     margin: 40px auto;
     padding: 0 20px;
-    /* Minimal, yumuşak kuzey ışığı arka plan, hafif bulanık */
     background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1400&q=80') no-repeat center center fixed;
     background-size: cover;
-    filter: brightness(0.35) blur(3px);
-    position: relative;
-    color: #eee;
+    color: #f0f0f0;
+    line-height: 1.8;
   }
 
-  /* Arka plan bulanıklığını yazıya etkilemeden yapmak için pseudo element */
-  body::before {
-    content: "";
-    position: fixed;
-    top:0; left:0; right:0; bottom:0;
-    background: inherit;
-    filter: brightness(0.35) blur(6px);
-    z-index: -1;
+  /* Yazıların arka planı hafif transparan koyu kutu, okunaklığı artırmak için */
+  .content {
+    background: rgba(0, 0, 30, 0.7);
+    padding: 30px 25px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.7);
   }
 
   p {
     font-size: 1.15em;
     margin-bottom: 2em;
-    line-height: 1.7;
     letter-spacing: 0.3px;
-    text-shadow: 0 0 4px #000;
-    position: relative;
-    z-index: 1;
   }
 
   img {
     display: block;
     margin: 20px auto;
-    width: 120px; /* Minimal küçük boyut */
+    width: 120px;
     border-radius: 8px;
     opacity: 0.9;
     box-shadow: 0 2px 6px rgba(0,0,0,0.5);
-    position: relative;
-    z-index: 1;
   }
 
   .quote {
     font-family: 'Georgia', serif;
     font-size: 1.5em;
     text-align: center;
-    color: #ffd98e;
+    color: #ffd87f;
     margin-top: 60px;
     padding: 20px;
-    background: rgba(0,0,0,0.45);
+    background: rgba(0,0,0,0.5);
     border-left: 5px solid #ffcc55;
     border-radius: 10px;
-    text-shadow: 0 0 3px #000;
-    position: relative;
-    z-index: 1;
   }
 
   .quote span {
@@ -76,43 +63,43 @@
 </style>
 </head>
 <body>
+  <div class="content">
+    <p>
+      Merhaba. Ben Dilek.  
+      Bu sayfa, içimde birikenleri sessizce paylaştığım küçük bir dünya.  
+      Kodlarla dans ederken, bazen yolumu kaybediyorum ama içimde hep bir umut var:  
+      <em>“Yoluma devam edeceğim.”</em>
+    </p>
 
-  <p>
-    Merhaba. Ben Dilek.  
-    Bu sayfa, içimde birikenleri sessizce paylaştığım küçük bir dünya.  
-    Kodlarla dans ederken, bazen yolumu kaybediyorum ama içimde hep bir umut var:  
-    <em>“Yoluma devam edeceğim.”</em>
-  </p>
+    <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=400&q=80" alt="Minimal defter ve kalem">
 
-  <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=400&q=80" alt="Minimal defter ve kalem">
+    <p>
+      Sabahlar bana hep taze bir başlangıç gibi geliyor.  
+      Bilmediğim sayfalar açılıyor gözlerimin önünde.  
+      Her gün yeni bir his, yeni bir öğrenme.
+    </p>
 
-  <p>
-    Sabahlar bana hep taze bir başlangıç gibi geliyor.  
-    Bilmediğim sayfalar açılıyor gözlerimin önünde.  
-    Her gün yeni bir his, yeni bir öğrenme.
-  </p>
+    <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=400&q=80" alt="Yumuşak ışıkta pencere ve çiçek">
 
-  <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=400&q=80" alt="Yumuşak ışıkta pencere ve çiçek">
+    <p>
+      İçimde sakladığım küçük bir oda var.  
+      Orada kendimle buluşurum, sessiz ve sakin.  
+      Belki bir fincan çay eşlik eder bu anlara…  
+      Çünkü önce kendiyle barışmak gerekir.
+    </p>
 
-  <p>
-    İçimde sakladığım küçük bir oda var.  
-    Orada kendimle buluşurum, sessiz ve sakin.  
-    Belki bir fincan çay eşlik eder bu anlara…  
-    Çünkü önce kendiyle barışmak gerekir.
-  </p>
+    <img src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&w=400&q=80" alt="Bir fincan çay ve hafif loş ışık">
 
-  <img src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&w=400&q=80" alt="Bir fincan çay ve hafif loş ışık">
+    <p>
+      Hayat akıyor, değişiyor ve ben değişiyorum.  
+      Kimi zaman bulutlu günler olsa da, içimde hep yanmaya devam eden küçük bir ışık var.  
+      O ışık bana diyor ki: “İlerle, durma.”
+    </p>
 
-  <p>
-    Hayat akıyor, değişiyor ve ben değişiyorum.  
-    Kimi zaman bulutlu günler olsa da, içimde hep yanmaya devam eden küçük bir ışık var.  
-    O ışık bana diyor ki: “İlerle, durma.”
-  </p>
-
-  <p class="quote">
-    <span>“Yorulsan da</span><br />
-    <strong>ışığını unutma.”</strong>
-  </p>
-
+    <p class="quote">
+      <span>“Yorulsan da</span><br />
+      <strong>ışığını unutma.”</strong>
+    </p>
+  </div>
 </body>
 </html>
