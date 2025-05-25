@@ -2,86 +2,49 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>İç Sesin</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bu Senin Hikâyen</title>
   <style>
-    html, body {
-      height: 100%;
+    body {
       margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      color: #fff;
-      overflow-x: hidden;
-    }
-    body::before {
-      content: "";
-      position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: url('https://images.unsplash.com/photo-1501973801540-537f08ccae7b?auto=format&fit=crop&w=1470&q=80') no-repeat center center fixed;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: url('https://oaidalleapiprodscus.blob.core.windows.net/private/org-TZpjN0IBmT6E7qTymC4q27UL/user-DZPpiUthElQbOlyFzMa7PiZn/img-13vfquPqaFiBIx2LGKnPiHnD.png?st=2024-05-26T09%3A34%3A34Z&se=2024-05-26T11%3A34%3A34Z&sp=r&sv=2021-08-06&sr=b&sig=%2Fn7N3QoI43kn%2FIpwtpEKAw1nF3AoIo6F9zIMzA2jNMo%3D') no-repeat center center;
       background-size: cover;
-      filter: brightness(0.55) blur(3px);
-      z-index: -1;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #333;
     }
-    main.container {
-      max-width: 720px;
-      margin: 80px auto 100px auto;
-      background: rgba(0,0,0,0.6);
-      padding: 45px 40px;
-      border-radius: 18px;
-      box-shadow: 0 0 45px rgba(0,0,0,0.9);
-    }
-    h1 {
-      font-size: 3.8rem;
-      font-weight: 900;
-      margin-bottom: 2.4rem;
+
+    .text-box {
+      background-color: rgba(255, 255, 255, 0.85);
+      padding: 30px 40px;
+      border-radius: 20px;
+      max-width: 600px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.2);
       text-align: center;
-      text-shadow: 0 0 20px rgba(255,255,255,0.9);
+      line-height: 1.7;
+      font-size: 18px;
     }
-    p {
-      font-size: 1.8rem;
-      line-height: 2.5;
-      margin-bottom: 2rem;
-      letter-spacing: 0.04em;
-      text-shadow: 0 0 12px rgba(0,0,0,0.7);
-    }
-    p.quote {
-      margin-top: 5rem;
-      font-size: 2.6rem;
-      font-weight: 700;
-      font-style: italic;
-      color: #ffd93b;
-      text-align: center;
-      text-shadow: 0 0 18px rgba(0,0,0,0.95);
-    }
-    @media (max-width: 768px) {
-      main.container {
-        margin: 70px 20px 80px 20px;
-        padding: 40px 25px;
-      }
-      h1 {
-        font-size: 2.8rem;
-        margin-bottom: 1.8rem;
-      }
-      p {
-        font-size: 1.4rem;
-        line-height: 2.1;
-        margin-bottom: 1.6rem;
-      }
-      p.quote {
-        font-size: 2rem;
-        margin-top: 3.5rem;
-      }
+
+    .text-box strong {
+      display: block;
+      margin-top: 20px;
+      font-size: 20px;
+      color: #444;
     }
   </style>
 </head>
 <body>
-  <main class="container" role="main">
-    <h1>Merhaba, ben iç sesinim.</h1>
-    <p>Biliyorum, yazılım öğrenmek biraz kahve kokusu, biraz uykusuz gece, biraz da “Acaba doğru mu yapıyorum?” sorusuyla dolu. Evet, ben de zor öğrenirim, bazen kafam öyle karışır ki kendi kendime “Bu iş bana göre değil” derim. Ama işin sırrı şu: Vazgeçmemek!</p>
-    <p>Burada kimse mükemmel değil, burası deneme yanılma laboratuvarı. Hatayı sevin, çünkü hata seni ileriye taşır. Amacım basit: Öğrenmek, yanılmak, pes etmemek.</p>
-    <p>Belki sen de geç kaldığını düşünüyorsun, ama hayır! Bu yolculukta geç kalmak diye bir şey yok. Her adımın kıymeti var, her hata öğretici. Kendine biraz sabır göster, inancını kaybetme.</p>
-    <p>Zorluklarla dolu bir yol bu, bazen yavaş yürürüz, bazen tökezleriz ama önemli olan devam etmek. Ben buradayım, sen buradasın, birlikte ilerleyeceğiz.</p>
-    <p>Son olarak; iç sesine kulak ver, cesur ol, yol uzun ama sonunda gülümseme var!</p>
-    <p class="quote">“Hiçbir zaman geç kalmadık, asıl önemli olan vazgeçmemek!”</p>
-  </main>
+  <div class="text-box">
+    Bazen ne yapmam gerektiğini bilmiyordum. Herkes bir yolunu bulmuş gibiydi ama ben hep bir adım geriden geliyordum. Kendimi, neyi sevdiğimi, neden yerimde saydığımı düşünürken buluyordum kendimi. Sanki dışarıda koca bir dünya vardı ama ben sadece izliyordum. Sonra bir yerde “yazılım” kelimesine rastladım. Çok da anlamadım ne olduğunu, ama bir şey kıpırdadı içimde. Bu neydi? Ben de yapabilir miydim?
+    <br><br>
+    Eğer sen de bunu düşünüyorsan, tam yerindesin. Yalnız değilsin. Beraber öğreneceğiz, beraber büyüyeceğiz. Hızlı olmak zorunda değiliz, sadece durmamak yeter.
+    <br><br>
+    Ve biliyor musun? Linda Liukas, yazılıma 25 yaşından sonra ilgi duymaya başladı. İlk başta hiçbir şey bilmiyordu. Ama sonra çocuklara kodlamayı öğreten kitaplar yazdı, dünya çapında konuşmalar yaptı. Geç başlamak engel değilmiş. Cesaret etmek yetermiş.
+    <strong>Bu senin hikâyen. Ve daha yeni başlıyor.</strong>
+  </div>
 </body>
 </html>
