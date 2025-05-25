@@ -4,36 +4,46 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Bu Senin Hikâyen</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
       padding: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: url('https://oaidalleapiprodscus.blob.core.windows.net/private/org-TZpjN0IBmT6E7qTymC4q27UL/user-DZPpiUthElQbOlyFzMa7PiZn/img-13vfquPqaFiBIx2LGKnPiHnD.png?st=2024-05-26T09%3A34%3A34Z&se=2024-05-26T11%3A34%3A34Z&sp=r&sv=2021-08-06&sr=b&sig=%2Fn7N3QoI43kn%2FIpwtpEKAw1nF3AoIo6F9zIMzA2jNMo%3D') no-repeat center center;
+      font-family: 'Poppins', sans-serif;
+      background: url('https://oaidalleapiprodscus.blob.core.windows.net/private/org-TZpjN0IBmT6E7qTymC4q27UL/user-DZPpiUthElQbOlyFzMa7PiZn/img-dcQxOEzjKExKN7zV8JCGGBZ5.png?st=2024-05-26T11%3A30%3A00Z&se=2024-05-27T11%3A30%3A00Z&sp=r&sv=2021-08-06&sr=b&sig=ZtA5tPbJ0wEAubSTnLdoKWWINo4ClxRx4nHX9r3%2Fz3I%3D') no-repeat center center fixed;
       background-size: cover;
-      height: 100vh;
+      min-height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
-      color: #333;
+      padding: 20px;
+      box-sizing: border-box;
     }
 
     .text-box {
       background-color: rgba(255, 255, 255, 0.85);
       padding: 30px 40px;
       border-radius: 20px;
-      max-width: 600px;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+      max-width: 700px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.15);
       text-align: center;
       line-height: 1.7;
       font-size: 18px;
+      color: #333;
     }
 
     .text-box strong {
       display: block;
       margin-top: 20px;
       font-size: 20px;
-      color: #444;
+      color: #222;
+    }
+
+    @media screen and (max-width: 768px) {
+      .text-box {
+        padding: 20px;
+        font-size: 16px;
+      }
     }
   </style>
 </head>
